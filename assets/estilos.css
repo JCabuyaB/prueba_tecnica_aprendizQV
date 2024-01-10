@@ -8,9 +8,18 @@
 }
 
 body{
+    background: red;
     font-family: 'Open Sans', sans-serif;
 }
 
 .title{
     font-family: 'Nunito', sans-serif;
+}
+
+.header{
+    background: #000;
+}
+
+.navbar{
+    background: yellow;
 }
