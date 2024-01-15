@@ -21,19 +21,21 @@ body {
 
 /* header */
 .header {
-    background: #1d3a6c;
-    position: sticky;
+    position: relative;
     top: 0;
-    box-shadow: 0 7px 7px rgb(128, 128, 128, .3);
+    box-shadow: 0 7px 14px rgb(128, 128, 128, .9);
     z-index: 2;
 }
 
 .navbar {
-    width: 95%;
-    margin: 0 auto;
+    padding: 0 2.5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background: #1d3a6c; */
 }
 
 .navbar__menu-logo {
@@ -46,6 +48,7 @@ body {
     width: 20%;
     overflow: hidden;
 }
+
 .navbar__logo img {
     width: 80%;
     height: 100%;
@@ -80,6 +83,7 @@ body {
     text-wrap: wrap;
     width: 100%;
     transition: 0.3s ease;
+    font-weight: bold;
 }
 
 .menu__anchor:hover {
@@ -93,7 +97,7 @@ body {
 .submenu {
     position: absolute;
     flex-direction: column;
-    width: 200px;
+    width: 250px;
     padding: 0 10px;
     background: #fff;
     box-shadow: 0 0 10px 2.5px rgba(0, 0, 0, 0.2);
@@ -120,6 +124,7 @@ body {
 .submenu__item:first-of-type {
     position: relative;
 }
+
 .submenu__item:first-of-type::before {
     position: absolute;
     content: "";
@@ -132,7 +137,7 @@ body {
     border-bottom: 10px solid #fff;
 }
 
-.anchor-submenu:hover ~ .submenu {
+.anchor-submenu:hover~.submenu {
     visibility: visible;
     opacity: 1;
 }
@@ -168,6 +173,7 @@ body {
     cursor: pointer;
     padding-right: 15px;
     border-right: 1px solid #aaaaaa;
+    font-weight: bold;
 }
 
 .person-icon {
@@ -176,6 +182,33 @@ body {
 
 .btn-login:hover {
     text-decoration: underline;
+}
+
+/* inicio banner */
+.banner{
+    background: linear-gradient(0deg, rgba(29, 58, 108, .6), rgba(29, 58, 108, .6)), url(https://izyacademy.com/pluginfile.php/10700/block_cocoon_slider_1/slides/1/slide-paginaprincipal_optimized_optimized.01-%281%29.png);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.banner__title, .banner__text{
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+}
+.banner__title{
+    font-size: 50px;
+}
+.banner__text{
+    font-size: 20px;
+    padding: 0 20%;
 }
 /* fin header */
 
@@ -192,6 +225,8 @@ body {
     width: 100%;
     height: 100%;
     display: none;
+    transition: .3s ease;
+    z-index: 2;
 }
 
 .login-form {
@@ -201,6 +236,7 @@ body {
     display: flex;
     flex-direction: column;
     border-radius: 5px;
+    z-index: 20;
 }
 
 .form__title {
@@ -212,24 +248,24 @@ body {
     margin-bottom: 30px;
 }
 
-.login-form input{
+.login-form input {
     padding: 12px 15px;
     font-size: 12px;
     outline: none;
     border: 1px solid #bdbdbd;
     border-radius: 3px;
     margin-bottom: 20px;
-    color: #9b9b9b;
+    color: #353535;
     transition: .3s linear;
     width: 300px;
 }
 
 .login-form input[type='text']:focus,
-.login-form input[type='password']:focus{
+.login-form input[type='password']:focus {
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
 }
 
-.login-form input[type='submit']{
+.login-form input[type='submit'] {
     font-family: 'Nunito', sans-serif;
     background: #1d3a6c;
     border: 1px solid #1d3a6c;
@@ -241,16 +277,16 @@ body {
     font-weight: bold;
 }
 
-.login-form input[type='submit']:hover{
+.login-form input[type='submit']:hover {
     text-decoration: underline;
 }
 
-.login-form input::placeholder{
+.login-form input::placeholder {
     color: #9b9b9b;
     font-size: 12px;
 }
 
-.form__btn-close{
+.form__btn-close {
     display: grid;
     place-items: center;
     position: absolute;
@@ -267,42 +303,44 @@ body {
     cursor: pointer;
     user-select: none;
 }
+
 /* fin formulario login  */
 
 
 
 /* inicio seccion de noticias */
-.news-section{
+.news-section {
     width: 90%;
     margin: auto;
     padding-top: 20px;
 }
 
-.news-section .section-title{
+.news-section .section-title {
     text-align: left;
     margin-bottom: 20px;
 }
 
-.news{
+.news {
     display: flex;
     justify-content: space-evenly;
 }
 
-.news-left-column, .news-right-column{
+.news-left-column,
+.news-right-column {
     width: 45%;
 }
 
 /* izquierda */
-.news-left-column{
+.news-left-column {
     display: flex;
     flex-direction: column;
 }
 
-.news-left__img{
+.news-left__img {
     height: 300px;
 }
 
-.news-left__img img{
+.news-left__img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -310,13 +348,13 @@ body {
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
 }
 
-.news-texts{
+.news-texts {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.news-left__title{
+.news-left__title {
     margin-top: 20px;
     background: #1d3a6c;
     padding: 10px;
@@ -326,24 +364,24 @@ body {
 }
 
 /* derecha */
-.news-right-column{
+.news-right-column {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 15px;
 }
 
-.news-right__card{
+.news-right__card {
     display: flex;
     flex-direction: column;
     width: 45%;
 }
 
-.news-right__img{
+.news-right__img {
     height: 150px;
 }
 
-.news-right__img img{
+.news-right__img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -351,7 +389,7 @@ body {
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
 }
 
-.news-right__title{
+.news-right__title {
     background-color: #1d3a6c;
     color: #fff;
     font-size: 15px;
@@ -362,38 +400,40 @@ body {
     font-weight: normal;
 }
 
-.news-left__text, .news-right__text{
+.news-left__text,
+.news-right__text {
     text-align: justify;
 }
+
 /* fin de noticias */
 
 
 
 /* inicio aliados */
-.partners-section{
+.partners-section {
     width: 95%;
     margin: auto;
     margin-top: 60px;
 }
 
-.partners__paragraph{
+.partners__paragraph {
     color: #1d3a6c;
     font-size: 18px;
     text-align: center;
 }
 
-.partners{
+.partners {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     margin-top: 20px;
 }
 
-.partner{
+.partner {
     width: 20%;
 }
 
-.partner_logo{
+.partner_logo {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -402,60 +442,62 @@ body {
     background: #fff;
 }
 
-.partner_logo:hover{
+.partner_logo:hover {
     transform: scale(1.2);
 }
 
-@media screen and (max-width: 600px){
-    .partners{
+@media screen and (max-width: 600px) {
+    .partners {
         flex-wrap: wrap;
     }
 }
+
 /* fin aliados */
 
 
 
 /* inicio formulario registro */
-.register-section{
+.register-section {
     width: 80%;
     margin: 60px auto 0;
     display: flex;
     justify-content: space-evenly;
 }
 
-.register-left-column, .register-right-column{
+.register-left-column,
+.register-right-column {
     width: 50%;
 }
 
-.register-left-column{
+.register-left-column {
     display: grid;
     place-items: center;
 }
 
-.register-left-column img{
+.register-left-column img {
     width: 90%;
 }
 
-.register__form{
+.register__form {
     display: flex;
     flex-direction: column;
     height: 100%;
     padding: 0 40px;
 }
 
-.form-group{
+.form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
 }
 
-.form-group label{
+.form-group label {
     font-size: 18px;
     color: #353535;
     margin-bottom: 2px;
 }
 
-.form-group input{
+.form-group input {
     border: 1px solid #bdbdbd;
     border-radius: 3px;
     padding: 10px;
@@ -464,20 +506,20 @@ body {
     transition: .2s ease;
 }
 
-.form-group input:focus{
+.form-group input:focus {
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
 }
 
-.form-group-chk label{
+.form-group-chk label {
     font-size: 15px;
 }
 
-.form-group-chk label span{
+.form-group-chk label span {
     color: #1d3a6c;
     font-weight: bold;
 }
 
-.register__form input[type='submit']{
+.register__form input[type='submit'] {
     background: #1d3a6c;
     color: #fff;
     border-radius: 5px;
@@ -485,13 +527,15 @@ body {
     padding: 12px;
     font-size: 18px;
     cursor: pointer;
+    transition: .4s linear;
     opacity: .6;
 }
+
 /* fin formulario registro */
 
 
 /* inicio footer */
-.footer{
+.footer {
     margin-top: 150px;
     background-color: #1d3a6c;
     padding: 30px 20px 20px;
@@ -500,36 +544,36 @@ body {
     background-size: 70px;
 }
 
-.footer__columns{
+.footer__columns {
     display: flex;
     justify-content: space-evenly;
 }
 
-.footer__column-big{
+.footer__column-big {
     width: 24%;
 }
 
-.footer__column{
+.footer__column {
     width: 17.6%;
 }
 
-.footer__column-title{
+.footer__column-title {
     color: #fff;
     font-weight: bold;
     margin-bottom: 25px;
     letter-spacing: 1px;
 }
 
-.footer__list{
+.footer__list {
     list-style: none;
 }
 
-.footer__item--dark{
+.footer__item--dark {
     color: #acacac;
     line-height: 25px;
 }
 
-.footer__item{
+.footer__item {
     color: #fff;
     line-height: 25px;
 }
@@ -537,47 +581,201 @@ body {
 /* parte inferior */
 
 
-.footer__bottom{
+.footer__bottom {
     margin-top: 50px;
-    border-top: 1px solid #9b9b9b;    
+    border-top: 1px solid #9b9b9b;
 }
 
-.footer__bottom-top{
+.footer__bottom-top {
     display: flex;
     padding-top: 20px;
     align-items: center;
 }
 
-.footer__bottom-logo{
+.footer__bottom-logo {
     width: 20%;
 }
 
-.footer__bottom-logo img{
+.footer__bottom-logo img {
     width: 50px;
     object-fit: contain;
 }
 
-.footer__bottom__text{
+.footer__bottom__text {
     color: #fff;
     font-weight: bold;
     width: 50%;
 }
 
-.footer__botom--social{
+.footer__botom--social {
     width: 30%;
     display: flex;
     justify-content: flex-start;
     gap: 25px;
 }
 
-.social__anchor{
+.social__anchor {
     color: #9b9b9b;
     font-size: 18px;
 }
 
-.footer__bottom-down p{
+.footer__bottom-down p {
     text-align: center;
     color: #acacac;
     font-size: 15px;
 }
+
 /* fin footer */
+
+
+
+
+
+
+
+
+
+/* página de .net */
+.course-overview {
+    width: 90%;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.course-overview__extract {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.course-overview__title {
+    font-size: 23px;
+    color: #1d3a6c;
+    margin-bottom: 15px;
+}
+
+.course-overview__paragraph {
+    font-size: 18px;
+    line-height: 25px;
+    text-align: justify;
+}
+
+.course-image {
+    width: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.course-image img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 7px 1px rgba(0, 0, 0, .2)
+}
+
+.course-parallax {
+    background: url(https://izyacademy.com/pluginfile.php/24282/block_cocoon_parallax/content/fondo-almacenamiento-nube-diseno-redes-empresariales%20%281%29%20%281%29.jpg);
+}
+
+/* cards */
+.course-cards {
+    width: 90%;
+    margin: 60px auto 0;
+    max-width: 1300px;
+}
+
+.course-cards_title {
+    text-align: center;
+    color: #1d3a6c;
+    font-size: 26px;
+}
+
+.course-cards__container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.course-card {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.course-card__img {
+    width: 200px;
+    height: 200px;
+}
+
+.course-card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100px;
+    box-shadow: 0 0 7px 1px rgba(0, 0, 0, .5);
+}
+
+.course-card__title {
+    font-size: 24px;
+    color: #1d3a6c;
+}
+
+/* parallax */
+.course-parallax {
+    position: relative;
+    margin-top: 60px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    padding: 0 18%;
+    background: url(https://izyacademy.com/pluginfile.php/24282/block_cocoon_parallax/content/fondo-almacenamiento-nube-diseno-redes-empresariales%20%281%29%20%281%29.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+}
+
+.course-parallax::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(29, 58, 108, .6);
+    z-index: -1;
+}
+
+.course-parallax__small,
+.course-parallax__bigger {
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.course-parallax__small {
+    font-size: 18px;
+}
+
+.course-parallax__bigger {
+    font-size: 40px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.form-msj-register{
+    background: rgba(255, 243, 20, 0.8);
+    width: 100%;
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 5px;
+    text-align: center;
+}

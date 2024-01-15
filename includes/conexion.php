@@ -1,9 +1,13 @@
 <?php
-    $server = 'localhost';
+    $server = 'localhost:3306';
     $username = 'root';
     $pass = '';
-    $db = 'prueba';
+    $db = 'login';
 
-    $conexion  = mysqli_connect($server, $username, $pass, $db);
+    $error = '';
 
-    mysqli_query($conexion, "SET NAMES 'utf8mb4'");
+    try{
+        $conexion = new PDO("mysql:host=$server;dbname=$db;", $username, $pass);
+    }catch (PDOException $ex){
+        $error = $ex->getMessage();
+    }
